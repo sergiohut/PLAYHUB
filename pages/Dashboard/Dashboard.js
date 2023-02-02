@@ -1,11 +1,12 @@
 import "./Dashboard.css"
 
-export const dashboardTemplate = () => {
-    const main = document.querySelector("main");
-     /*cleanPage(main);*/
-    main.innerHTML = `
+export const dashboardTemplate = () => `
       <section class="login">
-      <h1> Hey Moderfuckers </h1> 
+      <h1> Hey darling! Welcome to the Play Hub </h1> 
+      <ul> 
+      <li> <a href="#">Pokeapi</a> </li>
+
+      </ul>
       </section>`;
 
-  };
+  

@@ -1,10 +1,10 @@
+
 import "./Login.css"
+import { dashboardTemplate } from "../Dashboard/Dashboard";
 
 
-export const Login = () => {
-    const main = document.querySelector("main");
-     /*cleanPage(main);*/
-    main.innerHTML = `
+export const template = () => 
+     `
       <section class="login">
       <h1> Neoland Hub Games </h1> 
       <h2> Introduce tú nombre </h2>
@@ -13,12 +13,18 @@ export const Login = () => {
       <button type="submit" id="loginBtn">Log in</button>
       </form>
       </section>`;
-      storage();
-  };
+  ;
+
+const main = document.querySelector("main");
+main.innerHTML = template();
+
+
+
+  /*initContent(login); */
 
 //Esta función genera la template del login que meteremos en el main.js 
 
-  export const storage = () => {
+export const storage = () => {
     const loginBtn = document.querySelector("#loginBtn");
     const userName = document.querySelector("#userName");
     let localData = [];
@@ -26,10 +32,16 @@ export const Login = () => {
         if (userName.value !== ""){
         localData.push(userName.value);
         localStorage.setItem("UserName", JSON.stringify(localData));
+        const main = document.querySelector("main");
+        main.innerHTML = dashboardTemplate();
         //console.log("vas o no") para comprobar que la funcionalidad está funcionando al hacer el callback 
     }})};
   ;
+  storage()
 
+/*if (localStorage.length > 0) {
+  initContent("Dashboard");
+};
 //Esta función hace que al hacer click en el boton, el valor del input se almacene en el local Storage
 
 

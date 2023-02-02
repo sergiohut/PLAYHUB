@@ -1,10 +1,33 @@
 import './style.css'
 import javascriptLogo from './javascript.svg'
-import { Login } from "./pages/Login/Login";
+import { template } from "./pages/Login/Login";
 import { dashboardTemplate } from './pages/Dashboard/Dashboard';
+import { templateColor } from './components/color-mode';
+import { changeTheme } from './components/color-mode';
 
 const header = document.querySelector("header");
-header.innerHTML = Login();
+header.innerHTML = templateColor();
+
+changeTheme();
+
+/*export const initContent = (route) => {
+    switch (route) {
+        case "Login":
+            console.log ("Vamo a veh! Login")
+            break;
+        case "Dashboard":
+            console.log ("Vamo a veh! Login")
+            break;
+
+
+    }
+}*/
+
+
+
+
+
+
 
 /*if(localStorage.getItem.length < 0){
 header.innerHTML = Login();}
