@@ -38,6 +38,7 @@ export const storage = () => {
     }})};
   ;
   storage()
+  
 
 /*if (localStorage.length > 0) {
   initContent("Dashboard");
