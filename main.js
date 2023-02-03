@@ -5,7 +5,6 @@ import { dashboardTemplate } from './pages/Dashboard/Dashboard';
 //import { printDashboard } from './pages/Dashboard/Dashboard';
 import { templateColor } from './components/color-mode';
 import { changeTheme } from './components/color-mode';
-import { printPokedex } from './pages/Pokedex/Pokedex';
 
 
 

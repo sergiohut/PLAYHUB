@@ -1,31 +1,29 @@
 import "./Dashboard.css"
 import { pokedexTemplate } from "../Pokedex/Pokedex"
-import { printPokedex } from "../Pokedex/Pokedex";
+
 
 //Creamos la template de esta página y la exportamos para poder utilizarla en el main.js
 export const dashboardTemplate = () => `
       <section class="login">
       <h1> Hey darling! Welcome to the Play Hub</h1> 
       <ul> 
-      <li> <a id="pokedex" href="#"> Pokedex </a> </li>
+      <li> <a id="pokedex" href="#"> Pokedex </a></li>
       <li> <a id="memoryGame" href="#">Memory Game</a> </li>
       </ul>
       </section>`;
 
-const addListeners = () => {
-      document
-      .querySelector("#pokedex")
-      .addEventListener("click", () => pokedexTemplate());
-      };
 
-export const printDashboard = () => {
+const main = document.querySelector("main");
+main.innerHTML = dashboardTemplate();
+
+export const anchorListeners = () => {
+      const pokedexAnchor =  document.querySelector("#pokedex");
+      pokedexAnchor.addEventListener("click", () => {
       const main = document.querySelector("main");
-      main.innerHTML = dashboardTemplate();
-      addListeners();
-      };
-          
+      main.innerHTML = pokedexTemplate()})}
 
-      
+anchorListeners();
+
 
 /*export const addLisDash = () => {
       const pokedexAnchor = document.querySelector("#pokedex");
