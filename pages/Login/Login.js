@@ -1,6 +1,6 @@
 
 import "./Login.css"
-import { dashboardTemplate } from "../Dashboard/Dashboard";
+import { initContent } from "../../main";
 
 
 export const template = () => 
@@ -15,8 +15,11 @@ export const template = () =>
       </section>`;
   ;
 
+export const printLogin = () => {
 const main = document.querySelector("main");
 main.innerHTML = template();
+storage()
+}
 
 
 
@@ -32,12 +35,11 @@ export const storage = () => {
         if (userName.value !== ""){
         localData.push(userName.value);
         localStorage.setItem("UserName", JSON.stringify(localData));
-        const main = document.querySelector("main");
-        main.innerHTML = dashboardTemplate();
+        initContent("Dashboard");
         //console.log("vas o no") para comprobar que la funcionalidad está funcionando al hacer el callback 
     }})};
   ;
-  storage()
+
   
 
 /*if (localStorage.length > 0) {

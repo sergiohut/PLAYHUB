@@ -1,10 +1,10 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import { template } from "./pages/Login/Login";
-import { dashboardTemplate } from './pages/Dashboard/Dashboard';
-//import { printDashboard } from './pages/Dashboard/Dashboard';
+
 import { templateColor } from './components/color-mode';
 import { changeTheme } from './components/color-mode';
+import { printDashboard } from './pages/Dashboard/Dashboard';
+import { printPokedex } from './pages/Pokedex/Pokedex';
+import { printLogin } from './pages/Login/Login';
 
 
 
@@ -15,8 +15,14 @@ changeTheme();
 
 export const initContent = (route) => {
     switch (route) {
-      case undefined:
+      /*case undefined:
         HomeTemplate();
+        break;*/
+      case "Login":
+        printLogin();
+        break;
+      case "Dashboard":
+        printDashboard();
         break;
       case "Pokedex":
         printPokedex();
@@ -25,6 +31,8 @@ export const initContent = (route) => {
         GalleryTemplate();
         break;
     }};
+
+  initContent("Login");
 
 /*export const initContent = (route) => {
     switch (route) {
