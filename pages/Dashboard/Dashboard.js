@@ -21,7 +21,7 @@ const addListeners = () => {
   document.querySelector("#pokedex").addEventListener("click", () => 
     initContent("Pokedex"));
   document.querySelector("#memorygame")
-    .addEventListener("click", () => initContent("MemoryGame"));
+    //.addEventListener("click", () => initContent("MemoryGame"));
 };
 
 
