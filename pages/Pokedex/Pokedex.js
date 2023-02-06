@@ -1,6 +1,7 @@
 import "./Pokedex.css"
 import axios from "axios";
 
+
 export const pokedexTemplate = () => 
      `
       <section class="login">
@@ -23,9 +24,8 @@ export const printPokedex = () => {
 const BASEURL = "https://pokeapi.co/api/v2/pokemon/";
 const searchInput = document.querySelector("#searchInput");
 let data;
-
-
 const allCharacters = [];
+
   const getData = () => {
     for(let i=1; i<=150;i++){
     axios.get(`${BASEURL}${i}`)
@@ -36,6 +36,30 @@ const allCharacters = [];
     allCharacters.push(data);
     //console.log(data.name)
     const myTimeout = setTimeout(appendData(), 2000);});
+    const searchInput = document.querySelector("#searchInput");
+    const searchBtn = document.querySelector("#searchBtn");
+    
+    searchBtn.addEventListener("click", () => filterCharacters(allCharacters));
+    
+    const filterCharacters = (characters) => {
+      const filteredCharacters = characters.filter((character) => (
+        character.name.toLowerCase().includes(searchInput.value.toLowerCase())
+    ))
+    foundCharacters(filteredCharacters)};
+    
+    const foundCharacters = (characters) => {
+      const galleryContainer = document.querySelector(".gallery-container");
+      galleryContainer.innerHTML = "";
+      characters.forEach(character => {
+        const figure = document.createElement("figure");
+        figure.innerHTML = `
+        <img src=${character.sprites.other.dream_world.front_default} alt=${character.name}" />
+        <h3>${character.name}</h3>
+        <p>${character.id}</p>
+        `;
+        galleryContainer.appendChild(figure)
+      })
+    }
   }
   };
 
@@ -55,6 +79,26 @@ const appendData = () => {
 
 
 
+
+const filterCharacters = (characters) => {
+  const filteredCharacters = characters.filter((character) => (
+    character.name.toLowerCase().includes(searchInput.value.toLowerCase())
+))
+foundCharacters(filteredCharacters)};
+
+const foundCharacters = (characters) => {
+  const galleryContainer = document.querySelector(".gallery-container");
+  galleryContainer.innerHTML = "";
+  characters.forEach(character => {
+    const figure = document.createElement("figure");
+    figure.innerHTML = `
+    <img src=${character.sprites.other.dream_world.front_default} alt=${character.name}" />
+    <h3>${character.name}</h3>
+    <p>${character.id}</p>
+    `;
+    galleryContainer.appendChild(figure)
+  })
+}
 
 
 
