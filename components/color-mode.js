@@ -1,4 +1,4 @@
-import "./color.mode.css"
+import "./color-mode.css"
 
 export const templateColor = () => 
      `

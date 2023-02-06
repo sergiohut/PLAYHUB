@@ -1,7 +1,13 @@
 ul{
     list-style-type: none;
     padding-top: 2rem;
-    font-size: 2rem;
+    font-size: 1.2rem;
+}
+
+li{
+    background-color: rgba(254, 254, 254, 0.849);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
 a{
@@ -9,6 +15,6 @@ a{
 }
 
 a > img {
-    width:30px;
+    width:20px;
     
 }
