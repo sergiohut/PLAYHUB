@@ -1,5 +1,4 @@
 import "./Pokedex.css"
-import axios from "axios";
 
 
 export const pokedexTemplate = () => 
@@ -30,13 +29,14 @@ let data;
 let info;
 const allCharacters = [];
 
+
 const appendData = () => {
   const galleryContainer = document.querySelector(".gallery-container");
   const figure = document.createElement("figure");
   figure.innerHTML = `
   <img src=${data.sprites.other.dream_world.front_default} alt=${data.name}" />
   <h3>${data.name}</h3>
-  <p>${data.id}</p>
+  <p>#${data.id}</p>
   `;
   galleryContainer.appendChild(figure);
 }
@@ -47,7 +47,7 @@ const getData = async () => {
   for(let i=1; i<=150;i++){
   info = await fetch(`${BASEURL}${i}`);
   data = await info.json();
-  console.log("ASYNCAWAIT", data);
+  //console.log("ASYNCAWAIT", data);
   allCharacters.push(data);
   appendData();
   //console.log(data.name)
@@ -70,15 +70,14 @@ const getData = async () => {
       figure.innerHTML = `
       <img src=${character.sprites.other.dream_world.front_default} alt=${character.name}" />
       <h3>${character.name}</h3>
-      <p>${character.id}</p>
+      <p>#${character.id}</p>
       `;
-      galleryContainer.appendChild(figure)
+      galleryContainer.appendChild(figure);
     })
   }
 }}
 
 getData();
-
 
  /* const getData = () => {
     for(let i=1; i<=150;i++){
