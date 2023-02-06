@@ -35,8 +35,8 @@ const appendData = () => {
   const figure = document.createElement("figure");
   figure.innerHTML = `
   <img src=${data.sprites.other.dream_world.front_default} alt=${data.name}" />
-  <h3>${data.name}</h3>
-  <p>${data.id}</p>
+  <h3>${data.name.toUpperCase()}</h3>
+  <p>#${data.id}</p>
   `;
   galleryContainer.appendChild(figure);
 }

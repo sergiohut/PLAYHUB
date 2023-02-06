@@ -7,11 +7,12 @@ export const template = () =>
      `
       <section class="login">
       <h1> Neoland Hub Games </h1> 
-      <h2> Introduce tú nombre </h2>
+      <h2> Introduce tu nombre </h2>
       <form>
       <input type="text" id="userName" name="userName" required></input>
       <button type="submit" id="loginBtn">Log in</button>
       </form>
+      <img id="logo" src="https://res.cloudinary.com/ddu2qdsdp/image/upload/v1675698489/Varios/Hut_fmatmu.png" alt="logo">
       </section>`;
   ;
 

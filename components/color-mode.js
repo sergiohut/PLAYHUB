@@ -2,7 +2,7 @@ import "./color.mode.css"
 
 export const templateColor = () => 
      `
-    <button id="themeBtn"> Cambiar color de fondo </button>`;
+    <button id="themeBtn"> Cambiar color de fondo 🎨</button>`;
   ;
 
 
