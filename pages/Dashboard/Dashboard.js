@@ -20,7 +20,8 @@ export const printDashboard = () => {
 const addListeners = () => {
   document.querySelector("#pokedex").addEventListener("click", () => 
     initContent("Pokedex"));
-  document.querySelector("#memorygame")
+  document.querySelector("#memoryGame").addEventListener("click", () => 
+  initContent("MemoryGame"));
     //.addEventListener("click", () => initContent("MemoryGame"));
 };
 

@@ -5,6 +5,7 @@ import { changeTheme } from './components/color-mode';
 import { printDashboard } from './pages/Dashboard/Dashboard';
 import { printPokedex } from './pages/Pokedex/Pokedex';
 import { printLogin } from './pages/Login/Login';
+import { printMemoryGame } from './pages/MemoryGame/MemoryGame';
 
 
 
@@ -28,11 +29,15 @@ export const initContent = (route) => {
         printPokedex();
         break;
       case "MemoryGame":
-        GalleryTemplate();
+        printMemoryGame();
         break;
     }};
 
-  initContent("Login");
+//initContent("Login");
+
+if (localStorage.getItem("UserName")){
+  initContent("Dashboard")}
+else {initContent("Login")};
 
 /*export const initContent = (route) => {
     switch (route) {

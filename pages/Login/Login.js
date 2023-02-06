@@ -40,6 +40,8 @@ export const storage = () => {
     }})};
   ;
 
+  //console.log(localStorage.getItem("UserName"))
+
   
 
 /*if (localStorage.length > 0) {
