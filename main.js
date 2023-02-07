@@ -5,6 +5,9 @@ import { changeTheme } from './components/color-mode';
 import { printDashboard } from './pages/Dashboard/Dashboard';
 import { printPokedex } from './pages/Pokedex/Pokedex';
 import { printLogin } from './pages/Login/Login';
+import { playHub, printPlayHubBtn } from './components/PlayHub/PlayHub';
+import { templatePlayHubBtn } from './components/PlayHub/PlayHub';
+
 
 
 
@@ -12,8 +15,12 @@ import { printLogin } from './pages/Login/Login';
 
 const header = document.querySelector("header");
 header.innerHTML = templateColor();
-
 changeTheme();
+
+
+//header.innerHTML += templatePlayHubBtn();
+//playHub()
+
 
 export const initContent = (route) => {
     switch (route) {
@@ -28,6 +35,7 @@ export const initContent = (route) => {
         break;
       case "Pokedex":
         printPokedex();
+        //printPlayHubBtn();
         break;
       case "MemoryGame":
         printMemoryGame();

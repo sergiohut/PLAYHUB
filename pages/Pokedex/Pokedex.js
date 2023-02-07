@@ -1,4 +1,6 @@
 import "./Pokedex.css"
+import { initContent } from "../../main";
+
 
 
 export const pokedexTemplate = () => 
@@ -78,6 +80,15 @@ const getData = async () => {
 }}
 
 getData();
+
+/*const showAll = () => {
+  const allBtn = document.querySelector("#allBtn");
+  allBtn.addEventListener("click", () => {
+    initContent("Pokedex");
+  });
+};
+
+showAll();
 
  /* const getData = () => {
     for(let i=1; i<=150;i++){
