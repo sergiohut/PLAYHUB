@@ -18,3 +18,7 @@ a > img {
     width:20px;
     
 }
+
+span {
+    text-decoration: underline;
+}
